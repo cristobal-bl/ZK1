@@ -1,0 +1,29 @@
+<grid hflex="1" vflex="1" sclass="sidebar">
+	<zscript><![CDATA[
+		//zscript code, it runs on server side, use it for fast prototyping
+		java.util.Map sites = new java.util.HashMap();
+		
+		sites.put("zk", "http://www.zkoss.org/");
+		sites.put("demo", "http://www.zkoss.org/");
+		sites.put("devref", "http://www.zkoss.org/");
+		
+		void redirect(String name){
+			String loc = sites.get(name);
+			if(loc!=null){
+				execution.sendRedirect(loc);
+			}
+		}
+	]]></zscript>
+	
+	<rows>
+		<row sclass="sidebar-fn" onClick='redirect("zk")'>
+            <image src="/imgs/site.png"/> ZK
+        </row>
+		<row sclass="sidebar-fn" onClick='redirect("demo")'>
+            <image src="/imgs/demo.png"/> ZK Demo
+        </row>
+        <row sclass="sidebar-fn" onClick='redirect("devref")'>
+            <image src="/imgs/doc.png"/> ZK Developer Reference
+        </row>
+	</rows>
+</grid>
