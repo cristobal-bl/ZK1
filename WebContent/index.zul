@@ -6,7 +6,7 @@
 				<apply templateURI="FEFiles/ZUL/banner.zul" />
 			</north>
 			<west width="260px" border="none" collapsible="true" splittable="true" minsize="260">
-				<apply templateURI="FEFiles/ZUL/sidebar-zscript.zul" />
+				<apply templateURI="FEFiles/ZUL/sidebar.zul" />
 			</west>
 			<center id="mainContent" autoscroll="true">
 				<apply templateURI="FEFiles/ZUL/main.zul" />
