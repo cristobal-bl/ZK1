@@ -1,0 +1,56 @@
+<?link rel="stylesheet" type="text/css" href="FEFiles/css/style.css"?>
+<window border="normal" hflex="1" vflex="1" contentStyle="overflow:auto" apply="frontend.ProfileViewController">
+	<caption src="/img/profile.png" sclass="fn-caption" label="Profile (MVC)" />
+	<vlayout>
+		<grid width="500px">
+			<columns>
+				<column align="right" hflex="min" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<cell sclass="row-title">Account :</cell>
+					<cell><label id="account" /></cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Full Name :</cell>
+					<cell>
+						<textbox id="fullName" width="200px" constraint="no empty: Please enter your full name" />
+					</cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Email :</cell>
+					<cell>
+						<textbox id="email" width="200px" constraint="/.+@.+\.[a-z]+/: Please enter an email address" />
+					</cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Birthday :</cell>
+					<cell>
+						<datebox id="birthday" width="200px" constraint="no future"/>
+					</cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Country :</cell>
+					<cell>
+						<listbox id="country" mold="select" width="200px" />
+						<template name="model">
+							<listitem label="${each}"/>
+						</template>
+					</cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Bio :</cell>
+					<cell>
+						<textbox id="bio" multiline="true" hflex="1" height="200px" />
+					</cell>
+				</row>
+			</rows>
+		</grid>
+		<div>You are editing <label id="nameLabel" />'s profile.</div>
+		<hlayout>
+			<button id="saveProfile" label="Save" />
+			<button id="reloadProfile" label="Reload" />
+		</hlayout>
+	</vlayout>
+</window>
