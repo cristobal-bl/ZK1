@@ -1,8 +1,14 @@
-<grid apply="frontend.SidebarController" hflex="1" vflex="1" sclass="sidebar" id="sidebar">
+<grid hflex="1" vflex="1" sclass="sidebar" viewModel="@id('vm') @init('frontend.SidebarViewModel')" model="@load(vm.sidebarPages)">
 	<columns>
 		<column width="36px" />
 		<column />
 	</columns>
 	<rows>
+		<template name="model">
+			<row sclass="sidebar-fn" onClick="@command('navigate', page=each)">
+				<image src="@load(each.iconUri)" />
+				<label value="@load(each.label)" />
+			</row>
+		</template>
 	</rows>
 </grid>
