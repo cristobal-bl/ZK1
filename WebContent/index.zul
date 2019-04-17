@@ -9,7 +9,7 @@
 				<apply templateURI="FEFiles/ZUL/sidebar.zul" />
 			</west>
 			<center id="mainContent" autoscroll="true">
-				<apply templateURI="FEFiles/ZUL/main.zul" />
+				<apply templateURI="FEFiles/ZUL/profile-mvvm-property.zul" />
 			</center>
 			<south height="50px" border="none">
 				<apply templateURI="FEFiles/ZUL/footer.zul" />

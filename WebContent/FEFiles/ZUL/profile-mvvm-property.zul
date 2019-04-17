@@ -1,0 +1,49 @@
+<?link rel="stylesheet" type="text/css" src="FEFiles/css/style.css" ?>
+<window border="normal" hflex="1" vflex="1" contentStyle="overflow:auto" viewModel="@id('vm') @init('frontend.ProfileViewModel')">
+	<caption src="image.png" sclass="fn-caption" label="Profile (MVVM)" />
+	<vlayout>
+		<grid width="500px" form="@id('fx')@load(vm.currentUser)@save(vm.currentUser, before='save')">
+			<columns>
+				<column hflex="min" align="right" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<cell sclass="row-title">Account :</cell>
+					<cell><label value="@load(fx.account)"/></cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Full Name :</cell>
+					<cell><textbox width="200px" constraint="no empty: This field cannot be empty" value="@bind(fx.fullName)" /></cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Email :</cell>
+					<cell><textbox width="200px" constraint="no empty: Enter a valid email address" value="@bind(fx.email)" /></cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Birthday :</cell>
+					<cell><datebox width="200px" constraint="no future" value="@bind(fx.birthday)" /></cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Country :</cell>
+					<cell>
+						<listbox mold="select" width="200px" model="@load(vm.countryList)" selectedItem="@bind(fx.country)">
+							<template name="model">
+								<listitem label="@load(each)" />
+							</template>
+						</listbox>
+					</cell>
+				</row>
+				<row>
+					<cell sclass="row-title">Bio :</cell>
+					<cell><textbox multiline="true" hflex="1" height="200px" value="@bind(fx.bio)" /></cell>
+				</row>
+			</rows>
+		</grid>
+		<div>You are editing <label value='@load(vm.currentUser.fullName)'/>'s profile.</div>
+		<hlayout>
+			<button label="Save" onClick="@command('save')" />
+			<button label="Reload" onClick="@command('reload')" />
+		</hlayout>
+	</vlayout>
+</window>
