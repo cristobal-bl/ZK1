@@ -9,7 +9,7 @@ public class SidebarPageConfigImpl implements SidebarPageConfig{
 
 	HashMap<String,SidebarPage> pageMap = new LinkedHashMap<String,SidebarPage>();
 	public SidebarPageConfigImpl() {
-		pageMap.put("fn1",new SidebarPage("zk", "ZK", "image.png", "http://zkoss.org"));
+		pageMap.put("fn1",new SidebarPage("zk", "ZK", "/FEFiles/img/image.png", "http://zkoss.org"));
 		pageMap.put("fn2",new SidebarPage("demo", "ZK Demo", "image.png", "http://zkoss.org"));
 		pageMap.put("fn3",new SidebarPage("devref", "ZK Developer Reference", "image.png", "http://zkoss.org"));
 	}
