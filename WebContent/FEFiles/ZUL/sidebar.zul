@@ -1,6 +1,6 @@
 <grid apply="frontend.SidebarController" hflex="1" vflex="1" sclass="sidebar" id="sidebar">
 	<columns>
-		<column width="36px" />
+		<column hflex="min" />
 		<column />
 	</columns>
 	<rows>

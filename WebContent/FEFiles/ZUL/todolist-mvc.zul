@@ -24,7 +24,7 @@
 								<label value="${each.subject}"/>
 							</listcell>
 							<listcell>
-								<button forward="onClick=todoListbox.onTodoDelete" image="/imgs/cross.png" width="50px"/>
+								<button forward="onClick=todoListbox.onTodoDelete" image="/FEFiles/img/cross.png" width="50px"/>
 							</listcell>
 						</listitem>
 					</template>

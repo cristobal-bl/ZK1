@@ -1,0 +1,8 @@
+<?link rel="stylesheet" type="text/css" href="/FEFiles/css/style.css"?>
+<zk>
+<div height="100%">
+    <template name="layout" src="/FEFiles/ZUL/template.zul"/>
+    <apply template="layout"/>
+    <template name="center" src="profile-mvc.zul"/>
+</div>
+</zk>
