@@ -2,16 +2,19 @@
 <zk>
 	<borderlayout hflex="1" vflex="1">
 		<north height="100px" border="none">
-			<apply templateURI="banner.zul" />
+			<apply templateURI="/FEFiles/ZUL/banner.zul" />
 		</north>
-		<west width="260px" border="none" collapsible="true" splittable="true" minsize="260">
-			<apply templateURI="sidebar.zul" />
-		</west>
+    	<!-- create only when the currentUser is not an anonymous  -->
+        <if test="${not sessionScope.userCredential.anonymous}">
+        <west width="260px" border="none" collapsible="true" splittable="true" minsize="300">
+            <apply templateURI="/FEFiles/ZUL/sidebar.zul"/>
+        </west>
+        </if>
 		<center id="mainContent" autoscroll="true">
 			<apply template="center" />
 		</center>
-		<south height="50px" border="none">
-			<apply templateURI="footer.zul" />
+		<south vflex="1" border="none">
+			<apply templateURI="/FEFiles/ZUL/footer.zul" />
 		</south>
 	</borderlayout>
 </zk>

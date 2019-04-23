@@ -11,17 +11,31 @@ public class AuthenticationServiceImpl implements AuthenticationService,Serializ
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	UserInfoService userInfoService = new UserInfoServiceImpl();
 
-	@Override
-	public boolean login(String account, String password) {
-		return false; //not implemented yet
-	}
+    @Override
+    public boolean login(String nm, String pd) {
+        User user = userInfoService.findUser(nm);
+        //a simple plan text password verification
+        if(user==null || !user.getPassword().equals(pd)){
+            return false;
+        }
 
-	@Override
-	public void logout() {
-		// TODO Auto-generated method stub
+        Session sess = Sessions.getCurrent();
+        UserCredential cre = new UserCredential(user.getAccount(),user.getFullName());
 
-	}
+        sess.setAttribute("userCredential",cre);
+
+
+        return true;
+    }
+
+    @Override
+    public void logout() {
+        Session sess = Sessions.getCurrent();
+        sess.removeAttribute("userCredential");
+    }
 
 	@Override
 	public UserCredential getUserCredential() {

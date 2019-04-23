@@ -1,18 +1,11 @@
 <?link rel="stylesheet" type="text/css" href="FEFiles/css/style.css"?>
+<!-- protect page by the authentication init  -->
+<?init class="frontend.AuthenticationInit"?>
 <?page title="Auto Generated index.zul"?>
 <zk>
-	<borderlayout hflex="1" vflex="1">
-		<north height="100px" border="none">
-			<apply templateURI="FEFiles/ZUL/banner.zul" />
-		</north>
-		<west width="260px" border="none" collapsible="true" splittable="true" minsize="260">
-			<apply templateURI="FEFiles/ZUL/sidebar.zul" />
-		</west>
-		<center id="mainContent" autoscroll="true">
-			<apply template="center" />
-		</center>
-		<south height="50px" border="none">
-			<apply templateURI="FEFiles/ZUL/footer.zul" />
-		</south>
-	</borderlayout>
+	<div height="100%">
+	    <template name="layout" src="/FEFiles/ZUL/template.zul"/>
+	    <apply template="layout"/>
+	    <template name="center" />
+	</div>
 </zk>
